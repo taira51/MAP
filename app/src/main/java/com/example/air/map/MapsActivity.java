@@ -106,7 +106,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener,O
             }
         });
 
-        //マーカータップ時のイベントハンドラ
+        //マーカータップ時のイベントハンドラ（カメラボタンを表示する）
         mMap.setOnMarkerClickListener(new OnMarkerClickListener() {
             @Override
             public boolean onMarkerClick(Marker marker) {
@@ -115,7 +115,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener,O
             }
         });
 
-        //地図上をタップ時のイベントハンドラ
+        //地図上をタップ時のイベントハンドラ（カメラボタンを非常時にする）
         mMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
             @Override
             public void onMapClick(LatLng point) {
@@ -153,6 +153,7 @@ public class MapsActivity extends FragmentActivity implements LocationListener,O
         float[] results = new float[1];
         Location.distanceBetween(location.getLatitude(), location.getLongitude(), 34.684581, 135.526349, results);
 
+        //マーカーとの距離が50m以内の時にマーカーを切り替える
         if(results[0] < 50){
             oosakajo.setIcon(nearMarker);
         }else{

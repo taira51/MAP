@@ -1,10 +1,10 @@
 package com.example.air.map;
 
+import android.app.Activity;
 import android.graphics.Camera;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class CameraActivity extends AppCompatActivity {
+public class CameraActivity extends Activity {
 
     private Camera mCam = null;
 
